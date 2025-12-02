@@ -36,12 +36,16 @@ def classify_product(product_text):
 # Читаем CSV файл
 print("Reading CSV file...")
 with open('esf_fulll_202511211949.csv', 'r', encoding='utf-8') as f:
-    lines = [line.strip().replace('"', '')
-             for line in f.readlines()
-             if line.strip()]
+    lines = [
+        line.strip().replace('"', '')
+        for line in f.readlines()
+        if line.strip()
+    ]
 
-lines = lines[1:]
-df = pd.DataFrame({'DESCRIPTION': lines})
+unique_lines = list(set(lines))
+
+unique_lines = unique_lines[1:]
+df = pd.DataFrame({'DESCRIPTION': unique_lines})
 
 print(f"Total products: {len(df)}")
 print(f"First few rows:\n{df.head()}\n")

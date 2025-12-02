@@ -10,16 +10,17 @@
 5. Сравнение производительности
 """
 
-import pandas as pd
-import numpy as np
-import torch
-from torch.utils.data import DataLoader, Dataset
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer, TrainingArguments
-from sentence_transformers import SentenceTransformer, CrossEncoder, InputExample, losses
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support, classification_report
 import json
 import warnings
+
+import numpy as np
+import pandas as pd
+import torch
+from sentence_transformers import SentenceTransformer, CrossEncoder, InputExample, losses
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support
+from sklearn.model_selection import train_test_split
+from torch.utils.data import DataLoader
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer, TrainingArguments
 
 warnings.filterwarnings('ignore')
 
